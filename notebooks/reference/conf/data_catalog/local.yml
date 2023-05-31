@@ -1,81 +1,65 @@
 datasets:
   raw:
-    orders:
+    housing_price:
       type: ds
       format: csv
-      uri: ${core.data_base_path}/raw/sales/orders.csv
+      uri: ${core.data_base_path}/raw/housing_price/housing.csv
       driver_params: {}
-  
-    product:
-      type: ds
-      format: csv
-      uri: ${core.data_base_path}/raw/sales/prod_master.csv
-      driver_params: {}
-  
+
+
   cleaned:
-    orders:
+    housing_price:
       type: ds
       format: parquet
-      uri: ${core.data_base_path}/cleaned/sales/orders.parquet
+      uri: ${core.data_base_path}/cleaned/housing_price/housing.parquet
       driver_params: {}
 
-    product:
-      type: ds
-      format: parquet
-      uri: ${core.data_base_path}/cleaned/sales/product.parquet
-      driver_params: {}
-
-    sales:
-      type: ds
-      format: parquet
-      uri: ${core.data_base_path}/cleaned/sales/sales.parquet
-      driver_params: {}
 
   processed:
-    sales:
+    housing_price:
       type: ds
       format: parquet
-      uri: ${core.data_base_path}/processed/sales/sales.parquet
+      uri: ${core.data_base_path}/processed/housing_price/housing.parquet
       driver_params: {}
 
   train:
-    sales:
+    housing_price:
       features:
         type: ds
         format: parquet
-        uri: ${core.data_base_path}/train/sales/features.parquet
+        uri: ${core.data_base_path}/train/housing_price/features.parquet
         driver_params:
           save:
             index: False
       target:
         type: ds
         format: parquet
-        uri: ${core.data_base_path}/train/sales/target.parquet
+        uri: ${core.data_base_path}/train/housing_price/target.parquet
         driver_params:
           save:
             index: False
   test:
-    sales:
+    housing_price:
       features:
         type: ds
         format: parquet
-        uri: ${core.data_base_path}/test/sales/features.parquet
+        uri: ${core.data_base_path}/test/housing_price/features.parquet
         driver_params:
           save:
             index: False
       target:
         type: ds
         format: parquet
-        uri: ${core.data_base_path}/test/sales/target.parquet
+        uri: ${core.data_base_path}/test/housing_price/target.parquet
         driver_params:
           save:
             index: False
   score:
-    sales:
+    housing_price:
       output:
         type: ds
         format: parquet
-        uri: ${core.data_base_path}/test/sales/scored_output.parquet
+        uri: ${core.data_base_path}/test/housing_price/scored_output.parquet
         driver_params:
           save:
             index: False
